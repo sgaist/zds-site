@@ -1,0 +1,458 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Workflow et détails pratiques &mdash; Zeste de Savoir 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Zeste de Savoir 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Le back-end" href="back-end.html"/>
+        <link rel="prev" title="Installation de Elasticsearch (pour la recherche)" href="install/install-es.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Zeste de Savoir
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><em>Workflow</em> et détails pratiques</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-general"><em>Workflow</em> général</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-de-developpement"><em>Workflow</em> de développement</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quelques-precisions">Quelques précisions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#milestones">Milestones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#strategie-de-tagging-des-tickets">Stratégie de <em>tagging</em> des tickets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#explications">Explications</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-de-mise-en-production"><em>Workflow</em> de mise en production</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#en-cas-de-problemes-sur-la-release">En cas de problèmes sur la release</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#roles-et-responsabilites">Rôles et Responsabilités</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#le-maintainer-m">Le Maintainer (M)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#le-release-manager-rm">Le Release Manager (RM)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#glossaire">Glossaire</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="back-end.html">Le <em>back-end</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="back-end-code.html">Documentation technique du <em>back-end</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="front-end.html">Le <em>front-end</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">Makefile et autres outils</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Zeste de Savoir</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li><em>Workflow</em> et détails pratiques</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/workflow.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="workflow-et-details-pratiques">
+<h1><em>Workflow</em> et détails pratiques<a class="headerlink" href="#workflow-et-details-pratiques" title="Permalink to this headline">¶</a></h1>
+<p>Cette page détaille le <em>workflow</em> utilisé lors du développement de Zeste de Savoir. La <a class="reference external" href="https://github.com/zestedesavoir/zds-site/blob/dev/CONTRIBUTING.md">page de contribution</a> devrait répondre à vos questions quant au processus de développement. Ici seront aussi décrit quelques détails sur la gestion des tickets sur Github (<em>tagging</em> et priorité).</p>
+<p>Ce <em>workflow</em> est très fortement basé sur le <a class="reference external" href="http://nvie.com/posts/a-successful-git-branching-model/">Git flow</a>.</p>
+<div class="section" id="workflow-general">
+<h2><em>Workflow</em> général<a class="headerlink" href="#workflow-general" title="Permalink to this headline">¶</a></h2>
+<p>L’idée générale est très simple :</p>
+<ul class="simple">
+<li>Le développement se fait sur la branche <code class="docutils literal"><span class="pre">dev</span></code>;</li>
+<li>La branche <code class="docutils literal"><span class="pre">prod</span></code> contient la version en production;</li>
+<li>Lorsqu’on juge qu’on a assez de matière pour un nouveau déploiement, on crée une branche dédiée (par exemple <code class="docutils literal"><span class="pre">release-v1.7</span></code>) que l’on teste en pré-production (les bugs trouvés seront corrigés sur cette branche);</li>
+<li>En cas de bug ultra-urgent à corriger en production, on crée une branche spéciale (<a class="reference external" href="http://nvie.com/posts/a-successful-git-branching-model/#hotfix-branches">hotfix</a>).</li>
+</ul>
+<p>La pré-production (ou bêta) est disponible sur <a class="reference external" href="https://beta.zestedesavoir.com">beta.zestedesavoir.com</a>.</p>
+</div>
+<div class="section" id="workflow-de-developpement">
+<h2><em>Workflow</em> de développement<a class="headerlink" href="#workflow-de-developpement" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="description">
+<h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Les fonctionnalités et corrections de bugs se font via des <em>Pull Requests</em> (PR) depuis des <em>forks</em> via <a class="reference external" href="https://github.com/zestedesavoir.com/zds-site">GitHub</a>.</li>
+<li>Ces PR sont unitaires. Aucune PR qui corrige plusieurs problèmes ou apporte plusieurs fonctionnalité ne sera acceptée; la règle est : une PR = une fonctionnalité ou une correction.</li>
+<li>Ces PR sont mergées dans la branche <code class="docutils literal"><span class="pre">dev</span></code> (appelée <code class="docutils literal"><span class="pre">develop</span></code> dans le git flow standard), après une <em>Quality Assurance</em> (QA) légère.</li>
+<li>La branche <code class="docutils literal"><span class="pre">prod</span></code> (appelée <code class="docutils literal"><span class="pre">master</span></code> dans le git flow standard) contient exclusivement le code en production, pas la peine d’essayer de faire le moindre <em>commit</em> dessus !</li>
+<li>Les branches du dépôt principal (<code class="docutils literal"><span class="pre">dev</span></code>, <code class="docutils literal"><span class="pre">prod</span></code> et la branche de release) ne devraient contenir que des merge de PR, aucun commit direct.</li>
+</ol>
+</div>
+<div class="section" id="quelques-precisions">
+<h3>Quelques précisions<a class="headerlink" href="#quelques-precisions" title="Permalink to this headline">¶</a></h3>
+<p><strong>Où peut-on trouver les détails pratiques ?</strong></p>
+<p>Tous ces détails sont <a class="reference external" href="https://github.com/zestedesavoir/zds-site/blob/dev/CONTRIBUTING.md">dans la page de contribution</a>. On y trouve entre autres les recommendations en terme de PR ou de messages de commits.</p>
+<p><strong>Qu’est-ce qu’une “QA légère”</strong> ?</p>
+<p>C’est s’assurer que le code fait ce qu’il devrait sans passer des heures à re-tester l’intégralité du site. Concrètement, cela implique :</p>
+<ul class="simple">
+<li>une revue de code (<em>Code Review</em> (CR));</li>
+<li>la vérification que des tests correspondants à la fonctionnalité ou à la correction sont présents, cohérents et passent;</li>
+<li>des tests manuels dans le cas de fonctionnalités ou corrections complexes et/ou critiques (au cas par cas).</li>
+</ul>
+</div>
+</div>
+<div class="section" id="milestones">
+<h2>Milestones<a class="headerlink" href="#milestones" title="Permalink to this headline">¶</a></h2>
+<p>Pour avoir une vue d’ensemble des modifications inclues ou à inclure dans chaque release, nous utilisons des <em>milestones</em>. Il existe une <em>milestone</em> par release majeure (e.g. une pour v19, aucune pour v19.1), les PRs mergées dans une version mineure appartenant à la <em>milestone</em> de la version majeure correspondante.</p>
+<p>Les <em>milestones</em> sont également utilisées par le script de génération de rapport de release, rapport contenant quelques détails sur la release en question.</p>
+<p>Toute PR se voit attribuer une <em>milestone</em>. Elle est attribuée au plus tôt par le <em>Maintainer</em> ou le <em>Release Manager</em> à l’ouverture de la PR si cette PR doit impérativement passer dans la prochaine release, au plus tard par la personne qui merge la PR lors de son merge. Bien qu’une PR doit généralement être atomique, il arrive - notamment dans le cas des ZEP - qu’elle ait pour effet secondaire de régler plusieurs bugs, d’introduire plusieurs fonctionnalités. Dans ces rares cas, chaque ticket fermé par effet secondaire d’une PR peut également recevoir une <em>milestone</em>.</p>
+<ul class="simple">
+<li>Toute PR mergée dans dev doit porter la <em>milestone</em> « Version de développement »</li>
+<li>Toute PR mergée ailleurs (la branche de release si c’est une correction de bêta, prod en cas de hotfix) doit porter la <em>milestone</em> « Version N »</li>
+</ul>
+<p>La <em>milestone</em> « Version de développement » s’appelle comme ça parce qu’elle contient les modifications apportées depuis la dernière release. Cette <em>milestone</em> étant largement la plus utilisée, son nom a l’avantage qu’on voit immédiatement si on attribue ou non la bonne <em>milestone</em>, sans avoir à réfléchir au numéro de version.</p>
+<p>Lors de la clôture de chaque release, la <em>milestone</em> « Version de développement » est renommée « Version N » et une nouvelle <em>milestone</em> « Version de développement » est créée.</p>
+</div>
+<div class="section" id="strategie-de-tagging-des-tickets">
+<h2>Stratégie de <em>tagging</em> des tickets<a class="headerlink" href="#strategie-de-tagging-des-tickets" title="Permalink to this headline">¶</a></h2>
+<p>Les étiquettes (ou <em>labels</em> ou <em>tags</em>) utilisées pour classifier les tickets sont classées en 4 catégories (seuls les niveaux 2 représentent les tags utilisables) :</p>
+<ul class="simple">
+<li>C: Compétence<ul>
+<li>C-Back</li>
+<li>C-Front</li>
+<li>C-API</li>
+<li>C-Documentation</li>
+<li>C-Infra</li>
+</ul>
+</li>
+<li>P: Priorité<ul>
+<li>P-Bloquant</li>
+<li>P-Haute</li>
+<li>P-Basse</li>
+</ul>
+</li>
+<li>S: Statut<ul>
+<li>S-Evolution</li>
+<li>S-Bug</li>
+<li>S-Régression</li>
+<li>S-Zombie</li>
+</ul>
+</li>
+<li>Autres<ul>
+<li>Facile</li>
+<li>Feedback</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="explications">
+<h3>Explications<a class="headerlink" href="#explications" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Compétence : Quelle(s) partie(s) du système est/sont impactée(s) ? Permet notamment aux développeurs de choisir de se concentrer uniquement sur le front, aux admins de s’occuper de l’infra, …</li>
+<li>Priorité : Un <strong>bug</strong> ou une <strong>régression</strong> est <strong>bloquant**e si ça empêche une utilisation correcte du site (impossible de rédiger un article, forte atteinte aux performances, etc). Il s’agit d’un problème critique. Les autres tickets ou PR peuvent être de **Haute</strong> ou <strong>Basse</strong> priorité, ces étiquettes étant facultatives. Par exemple, une ZEP aura rarement une priorité attribuée, par contre si elle touche à sa fin mais nécessite une petite évolution pour pouvoir être mergée, la PR de cette petite évolution pourrait à l’approche de la release se voir attribuer une haute priorité.</li>
+<li>Statut : <strong>Régression</strong> ou <strong>Bug</strong> ? : Une régression est un retour en arrière en terme de qualité. Il s’agit d’un bug, mais on le différencie parce que ce bug vient d’être introduit dans une partie du code qui auparavant fonctionnait comme voulu. Un problème qui n’est pas une régression est indiqué <em>Bug</em>. Il s’agit par exemple d’un problème impactant une nouvelle fonctionnalité. Les tickets sous le tag <strong>Zombie</strong> sont des bugs mineurs n’ayant pas donnés signe de vie depuis longtemps. Ils sont donc non-résolus mais fermés et placés sous cette étiquette pour garder propre la pile des tickets actifs. Dans l’idéal il faudrait les rouvrir pour les résoudre un jour…</li>
+<li>Le tag <strong>Facile</strong> : Ce tag est là uniquement pour guider les nouveaux contributeurs vers des tâches accessibles. Pour pouvoir utiliser cette étiquette, une proposition de solution doit être écrite dans le ticket.</li>
+<li>Le tag <strong>Feedback</strong> : Ce tag indique les tickets sur lesquels l’auteur souhaite recevoir un retour, discuter une approche, proposer quelque chose, ouvrir le débat.</li>
+</ul>
+<p>La priorité est mise sur ce qui est Bloquant, puis Haut. Les autres tickets ou PRs n’ont pas de priorité particulière. La basse priorité vient en dernier. Chacun est invité à choisir ce sur quoi concentrer ses efforts en fonction de ces priorités ou de ses intérêts.</p>
+</div>
+</div>
+<div class="section" id="workflow-de-mise-en-production">
+<h2><em>Workflow</em> de mise en production<a class="headerlink" href="#workflow-de-mise-en-production" title="Permalink to this headline">¶</a></h2>
+<p>Cette partie est là surtout pour satisfaire votre curiosité, à moins d’avoir les droits de faire une Mise En Production (MEP).</p>
+<div class="section" id="id1">
+<h3>Description<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Quand on a assez de nouveautés dans <code class="docutils literal"><span class="pre">dev</span></code> (mais pas trop), on décide de faire une <em>release</em>. L’idée est de pouvoir vérifier et corriger les problèmes de cette <em>release</em> rapidement, en moins de 2 semaines entre le lancement de la release et sa MEP.<ol class="arabic">
+<li>Création d’une <strong>nouvelle branche de release</strong> du nom de la version (par exemple <code class="docutils literal"><span class="pre">release-v1.7</span></code>)</li>
+<li>Déploiement de cette branche sur l’environnement de pré-production, avec un <em>dump</em> de données de production</li>
+<li>Tests les plus complets possibles sur ce nouvel environnement</li>
+<li>Corrections éventuelles sur cette branche de <em>release</em>. Les corrections <strong>ne sont pas remontées sur ``dev``</strong> au fur et à mesure. Cf ci-dessous pour les détails.</li>
+</ol>
+</li>
+<li>Lorsqu’on a bien testé cette branche, on la met en production :<ol class="arabic">
+<li>Merge de la branche de <em>release</em> dans <code class="docutils literal"><span class="pre">dev</span></code></li>
+<li>Merge de la branche de <em>release</em> dans <code class="docutils literal"><span class="pre">prod</span></code></li>
+<li>Tag avec la nouvelle version</li>
+<li>Mise en production sur le serveur</li>
+<li>Suppression de la branche de <em>release</em>, devenue inutile</li>
+</ol>
+</li>
+</ol>
+<p>Pour éviter d’installer les outils front en production pour des questions de fiabilité, le front est automatiquement généré par Travis CI et poussé sur le dépot dès qu’un tag (qui correspond à une release) est poussé sur GitHub. <a class="reference external" href="https://github.com/zestedesavoir/zds-site/tree/dev/scripts/push_front.sh">scripts/push_front.sh</a> est donc lancé avec l’utilisateur <a class="reference external" href="https://github.com/zds-bot">ZDS-Bot</a> dès qu’un tag est poussé sur le dépot. Ce script crée un nouveau tag avec <em>-build</em> en suffixe, contenant un commit avec le front généré, qui sera déployé en (pré-)production.</p>
+<p>Le temps maximum entre la création d’une branche de <em>release</em> et sa mise en production est de <strong>deux semaines</strong>. Au-delà on considère qu’il y a trop de problèmes et qu’ils risquent de bloquer le développement :</p>
+<ol class="arabic simple">
+<li>Merge des corrections de la branche de <em>release</em> dans <code class="docutils literal"><span class="pre">dev</span></code></li>
+<li>Pas de mise en production</li>
+<li>Suppression de la branche de <em>release</em>, devenue inutile</li>
+</ol>
+</div>
+<div class="section" id="en-cas-de-problemes-sur-la-release">
+<h3>En cas de problèmes sur la release<a class="headerlink" href="#en-cas-de-problemes-sur-la-release" title="Permalink to this headline">¶</a></h3>
+<p>Vous l’avez lu : les corrections de <code class="docutils literal"><span class="pre">master</span></code> <strong>ne sont pas remontées sur</strong> <code class="docutils literal"><span class="pre">dev</span></code> au fur et à mesure. La raison est que ça prends du temps, de l’énergie et que ça fait beaucoup de merges croisés. Donc toutes les corrections sont remontées en même temps lors de la mise en production. Conséquences :</p>
+<ul class="simple">
+<li>Si vous bossez sur <code class="docutils literal"><span class="pre">dev</span></code> pendant qu’une <em>release</em> est en cours, pas la peine de corriger un bug déjà corrigé sur la <em>release</em> : la PR serait refusée (pour cause de doublon).</li>
+<li>Si un <em>gros</em> problème est détecté sur la <em>release</em> et qu’il est correctible en un temps raisonnable :<ol class="arabic">
+<li>Il est corrigé sur la branche de <em>release</em>.</li>
+<li>Les merges de PR sur <code class="docutils literal"><span class="pre">dev</span></code> qui impliquent un risque même vague de conflit sont bloqués.</li>
+<li>S’il y a quand même un conflit (à cause d’une PR mergée sur <code class="docutils literal"><span class="pre">dev</span></code> avant la détection du problème), la personne qui règle le problème fournit 2 correctifs : un pour la branche de <em>release</em> et un pour la branche de de <code class="docutils literal"><span class="pre">dev</span></code>.</li>
+</ol>
+</li>
+</ul>
+<p>Ceci fonctionne bien si les développements sont de bonne qualité, donc avec peu de correctifs sur la branche de <em>release</em> (idéalement aucun !)… les codes approximatifs et non testés seront donc refusés.</p>
+</div>
+</div>
+<div class="section" id="roles-et-responsabilites">
+<h2>Rôles et Responsabilités<a class="headerlink" href="#roles-et-responsabilites" title="Permalink to this headline">¶</a></h2>
+<p>Le projet Zeste de Savoir est dirigé par sa communauté. Ensuite les développeurs prennent en main l’aspect technique.
+On distingue cependant deux rôles particuliers au sein de l’équipe de développement.
+Voici leurs noms ainsi que leurs tâches :</p>
+<div class="section" id="le-maintainer-m">
+<h3>Le Maintainer (M)<a class="headerlink" href="#le-maintainer-m" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>Suivi des éventuels bugs et suggestions remontés sur le forum</li>
+<li>Écriture d’un <em>changelog</em> incluant les instructions de déploiement et les tests à effectuer en bêta</li>
+<li>Confirmer les choix techniques</li>
+<li>Trancher les choix techniques qui ne sont pas évidents</li>
+<li>S’assurer que les tickets vivent leur vie (tags par exemple)</li>
+<li>Marquer les tickets comme bloquants et donner des coups de fouet pour qu’ils soient fermés</li>
+<li>S’assurer que les PR s’écoulent et se débloquent</li>
+<li>Gérer les tensions entre devs/membres si nécessaire</li>
+<li>Gérer la “vie de l’équipe” et sa logistique (droits github…)</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="le-release-manager-rm">
+<h3>Le Release Manager (RM)<a class="headerlink" href="#le-release-manager-rm" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>Roles<ul>
+<li>Gestion de la branche de production du dépôt</li>
+<li>Mise en bêta puis mise en production</li>
+<li>Gérer et monitorer l’infra (configuration des logiciels, logs, sécurité) [pré]prod’</li>
+<li>Donner un avis sur les contraintes de changement de serveur (ou prévenir sur les limites de l’actuel quand nécessaire, cf. premier point)</li>
+<li>Suivre les tickets “infra” sur GH et faire les actions nécessaires</li>
+<li>Gérer les personnes ayant accès au serveur [pré]prod’</li>
+<li>Maintenir de la doc. sur les actions pour faire un suivi et assurer la relève/remplacement quand c’est nécessaire (maladie, vacances…)</li>
+</ul>
+</li>
+<li>Responsabilités<ul>
+<li><strong>Confidentialité</strong> vis-a-vis des données privées présente sur les serveurs (email, contenu de MP…)</li>
+<li>Si possible, toujours tester en preprod’ avant de reproduire en prod’</li>
+<li><strong>Professionnalisme</strong>, “si on sait pas on fait pas” pour ne pas mettre la production en péril (sauf en preprod entre les releases)</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<p>Chacun de ces postes est occupé par une personne différente (idéalement) qui aura été choisi parmi les développeurs et pour qui l’association Zeste de Savoir a donné son approbation (en raison du caractère confidentiel de certaines données).</p>
+</div>
+</div>
+<div class="section" id="glossaire">
+<h2>Glossaire<a class="headerlink" href="#glossaire" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>MEP</strong> : Mise En Production</li>
+<li><strong>PR</strong> : <em>Pull Request</em> (proposition d’une modification de code à un projet)</li>
+<li><strong>QA</strong> : <em>Quality Assurance</em> (<a class="reference external" href="https://fr.wikipedia.org/wiki/Assurance_qualit%C3%A9">Assurance Qualité</a>)</li>
+<li><strong>CR</strong> : <em>Code Review</em> (<a class="reference external" href="https://fr.wikipedia.org/wiki/Revue_de_code">Revue de code</a>)</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="back-end.html" class="btn btn-neutral float-right" title="Le back-end" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="install/install-es.html" class="btn btn-neutral" title="Installation de Elasticsearch (pour la recherche)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, zestedesavoir.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

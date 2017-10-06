@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation du backend sous macOS &mdash; Zeste de Savoir 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Zeste de Savoir 1.0 documentation" href="../index.html"/>
+        <link rel="up" title="Installation" href="../install.html"/>
+        <link rel="next" title="Installation du backend sous Windows" href="backend-windows-install.html"/>
+        <link rel="prev" title="Installation du backend sous Linux" href="backend-linux-install.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Zeste de Savoir
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../install.html">Installation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="backend-linux-install.html">Installation du backend sous Linux</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Installation du backend sous macOS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pre-requis">Pré-requis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-de-virtualenv">Configuration de virtualenv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage-de-virtualenv">Usage de virtualenv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-des-des-dependances-front-et-back">Installation des des dépendances front et back</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lancer-zds">Lancer ZdS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aller-plus-loin">Aller plus loin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend-windows-install.html">Installation du backend sous Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy-in-production.html">Configuration des serveurs de production</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontend-install.html">Installation du frontend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install-es.html">Installation de Elasticsearch (pour la recherche)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow.html"><em>Workflow</em> et détails pratiques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../back-end.html">Le <em>back-end</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../back-end-code.html">Documentation technique du <em>back-end</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../front-end.html">Le <em>front-end</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">Makefile et autres outils</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Zeste de Savoir</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../install.html">Installation</a> &raquo;</li>
+        
+      <li>Installation du backend sous macOS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/install/backend-os-x-install.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation-du-backend-sous-macos">
+<h1>Installation du backend sous macOS<a class="headerlink" href="#installation-du-backend-sous-macos" title="Permalink to this headline">¶</a></h1>
+<p>Pour installer une version locale de ZdS sur macOS, veuillez suivre les instructions suivantes.
+Si une commande ne passe pas, essayez de savoir pourquoi avant de continuer.</p>
+<div class="section" id="pre-requis">
+<h2>Pré-requis<a class="headerlink" href="#pre-requis" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Installer XCode :</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>xcode-select --install
+</pre></div>
+</div>
+<ul class="simple">
+<li>Installer <a class="reference external" href="http://brew.sh/">Homebrew</a>.</li>
+<li>Installer un nouveau Python par Homebrew :</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>brew install python --framework
+<span class="c1"># Il se peut que votre système n&#39;utilise pas la nouvelle version de Python. Si c&#39;est le cas, lancez la commande suivante.</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/usr/local/bin:/usr/local/sbin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Si vous avez décidé de ne pas installer un nouveau python et que vous utilisez celui de base du système, installez pip :</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>wget https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+</pre></div>
+</div>
+<ul class="simple">
+<li>Installer toutes les dépendances systèmes nécessaires :</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>make install-osx
+</pre></div>
+</div>
+<p>Une fois les pré-requis terminés, vous pouvez vous lancer dans l’installaton de l’environnement de zds.</p>
+</div>
+<div class="section" id="configuration-de-virtualenv">
+<h2>Configuration de virtualenv<a class="headerlink" href="#configuration-de-virtualenv" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>mkdir ~/.virtualenvs
+<span class="nb">echo</span> <span class="s2">&quot;export WORKON_HOME=</span><span class="nv">$HOME</span><span class="s2">/.virtualenvs&quot;</span> &gt;&gt; ~/.bash_profile
+<span class="nb">echo</span> <span class="s2">&quot;source /usr/local/bin/virtualenvwrapper.sh&quot;</span> &gt;&gt; ~/.bash_profile
+<span class="nb">source</span> ~/.bash_profile
+</pre></div>
+</div>
+</div>
+<div class="section" id="usage-de-virtualenv">
+<h2>Usage de virtualenv<a class="headerlink" href="#usage-de-virtualenv" title="Permalink to this headline">¶</a></h2>
+<p>Création d’un virtualenv :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>mkvirtualenv zdsenv
+</pre></div>
+</div>
+<p>Lancer un virtualenv :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>workon zdsenv
+</pre></div>
+</div>
+<p>Quitter un virtualenv :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>deactivate
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation-des-des-dependances-front-et-back">
+<h2>Installation des des dépendances front et back<a class="headerlink" href="#installation-des-des-dependances-front-et-back" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>make install-front
+make build-front
+make install-back
+</pre></div>
+</div>
+</div>
+<div class="section" id="lancer-zds">
+<h2>Lancer ZdS<a class="headerlink" href="#lancer-zds" title="Permalink to this headline">¶</a></h2>
+<p>Une fois dans votre environnement python et toutes les dépendances installées, lançons ZdS :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>make migrate
+make run-back
+</pre></div>
+</div>
+</div>
+<div class="section" id="aller-plus-loin">
+<h2>Aller plus loin<a class="headerlink" href="#aller-plus-loin" title="Permalink to this headline">¶</a></h2>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Cette section n’a jamais été testée. Si vous êtes parvenu à installer Latex et Pandoc et à les faire fonctionner avec ZdS, toute contribution à cette documentation est largement la bienvenue !</p>
+</div>
+<p>Pour faire fonctionner ZdS dans son ensemble vous devez installer les outils LateX et Pandoc.</p>
+<ul class="simple">
+<li>Téléchagez et installez <a class="reference external" href="http://www.tug.org/mactex/morepackages.html">BasicTex</a></li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>brew install texlive-basic
+</pre></div>
+</div>
+<ul class="simple">
+<li>Téléchargez et installez <a class="reference external" href="https://github.com/jgm/pandoc/releases">Pandoc</a></li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>brew install pandoc
+</pre></div>
+</div>
+<p>Vous pouvez également <a class="reference external" href="../utils/git-pre-hook.html">indiquer à Git de ne pas effectuer de commit s’il y a des erreurs de formatage dans le code</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="backend-windows-install.html" class="btn btn-neutral float-right" title="Installation du backend sous Windows" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="backend-linux-install.html" class="btn btn-neutral" title="Installation du backend sous Linux" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, zestedesavoir.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

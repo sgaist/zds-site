@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation du backend sous Linux &mdash; Zeste de Savoir 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Zeste de Savoir 1.0 documentation" href="../index.html"/>
+        <link rel="up" title="Installation" href="../install.html"/>
+        <link rel="next" title="Installation du backend sous macOS" href="backend-os-x-install.html"/>
+        <link rel="prev" title="Installation" href="../install.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Zeste de Savoir
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../install.html">Installation</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Installation du backend sous Linux</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation-et-configuration-de-virtualenv">Installation et configuration de <cite>virtualenv</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-des-outils-front-end">Installation des outils front-end</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lancer-zds">Lancer ZdS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aller-plus-loin">Aller plus loin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend-os-x-install.html">Installation du backend sous macOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backend-windows-install.html">Installation du backend sous Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy-in-production.html">Configuration des serveurs de production</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontend-install.html">Installation du frontend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install-es.html">Installation de Elasticsearch (pour la recherche)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow.html"><em>Workflow</em> et détails pratiques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../back-end.html">Le <em>back-end</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../back-end-code.html">Documentation technique du <em>back-end</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../front-end.html">Le <em>front-end</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">Makefile et autres outils</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Zeste de Savoir</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../install.html">Installation</a> &raquo;</li>
+        
+      <li>Installation du backend sous Linux</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/install/backend-linux-install.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation-du-backend-sous-linux">
+<h1>Installation du backend sous Linux<a class="headerlink" href="#installation-du-backend-sous-linux" title="Permalink to this headline">¶</a></h1>
+<p>Pour installer une version locale de ZdS sur GNU/Linux, veuillez suivre les instructions suivantes.</p>
+<ul class="simple">
+<li>Si une commande ne passe pas, essayez de savoir pourquoi avant de continuer.</li>
+<li>Si vous voulez savoir ce qui se cache derrière une commande <code class="docutils literal"><span class="pre">make</span></code>, ouvrez le fichier nommé <code class="docutils literal"><span class="pre">Makefile</span></code> présent à la racine du projet.</li>
+<li>Si une erreur s’est glissée dans la doc, ou si la doc a glissé vers l’obscolescence, ouvrez <a class="reference external" href="https://github.com/zestedesavoir/zds-site/issues/new">un ticket sur notre repo github</a></li>
+<li>Si malgré tout vous ne parvenez pas à installer ZdS, n’hésitez pas à ouvrir <a class="reference external" href="https://zestedesavoir.com/forums/sujet/nouveau/?forum=2">un sujet sur le forum</a></li>
+</ul>
+<p>Certaines des commandes d’installation (débutant par <code class="docutils literal"><span class="pre">apt-get</span></code>) sont données ici pour Debian et ses dérivés, pour lesquels il est sûr qu’elles fonctionnent. Si vous utilisez une distribution différente, le nom des paquets à installer devrait être fort semblable, n’hésitez dès lors pas à employer la fonction “recherche” de votre gestionnaire de paquet préféré. Les autres commandes sont génériques et indépendantes de la distribution utilisée.</p>
+<p><strong>NB</strong> : il est impératif que la locale fr_FR.UTF-8 soit installée sur votre distribution.</p>
+<p>ZdS a besoin des dépendances suivantes, installables manuellement ou à l’aide d’un Makefile (voir plus bas) :</p>
+<ul class="simple">
+<li>git : <code class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">git</span></code></li>
+<li>python2.7</li>
+<li>python-dev : <code class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python-dev</span></code></li>
+<li>easy_install : <code class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python-setuptools</span></code></li>
+<li>pip : <code class="docutils literal"><span class="pre">easy_install</span> <span class="pre">pip</span></code></li>
+<li>tox : <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tox</span></code></li>
+<li>libxml2-dev : <code class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">libxml2-dev</span></code></li>
+<li>python-lxml : <code class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python-lxml</span></code></li>
+<li>libxlst-dev (peut être appelée libxlst1-dev sur certains OS comme Ubuntu)</li>
+<li>libz-dev (peut être libz1g-dev sur système 64bits)</li>
+<li>python-sqlparse</li>
+<li>libffi : <code class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">libffi-dev</span></code></li>
+<li>libjpeg62-turbo libjpeg62-turbo-dev libfreetype6 libfreetype6-dev : <code class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">libjpeg62-turbo</span> <span class="pre">libjpeg62-turbo-dev</span> <span class="pre">libfreetype6</span> <span class="pre">libfreetype6-dev</span></code> (peut être appelée libjpeg8 et libjpeg8-dev sur  certains OS comme Ubuntu)</li>
+<li>gcc : <code class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">build-essential</span></code></li>
+</ul>
+<p><strong>NB</strong> : pour les utilisateurs d’Archlinux, les outils python doivent être ceux de python 2, généralement sous la forme <code class="docutils literal"><span class="pre">python2-smth</span></code></p>
+<p>Ou à l’aide du Makefile (<code class="docutils literal"><span class="pre">sudo</span></code> sera appelé automatiquement, ne l’ajoutez jamais si on ne le précise pas) :</p>
+<p>Pour Debian.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>make install-debian
+</pre></div>
+</div>
+<p>Pour Ubuntu.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>make install-ubuntu
+</pre></div>
+</div>
+<p>Pour Fedora.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>make install-fedora
+</pre></div>
+</div>
+<p>Pour Archlinux.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>make install-archlinux
+</pre></div>
+</div>
+<div class="section" id="installation-et-configuration-de-virtualenv">
+<h2>Installation et configuration de <cite>virtualenv</cite><a class="headerlink" href="#installation-et-configuration-de-virtualenv" title="Permalink to this headline">¶</a></h2>
+<p>(cette étape n’est pas obligatoire mais fortement conseillée; ne tapez PAS les commandes en root donc pas avec <code class="docutils literal"><span class="pre">sudo</span></code>)</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>pip install --user virtualenv <span class="c1"># Ajout du module virtualenv</span>
+virtualenv zdsenv --python<span class="o">=</span>python2 <span class="c1"># Création du répertoire &quot;zdsenv&quot;</span>
+</pre></div>
+</div>
+<p><strong>À chaque fois</strong> que vous souhaitez travailler dans votre environnement, activez-le via la commande suivante :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">source</span> zdsenv/bin/activate <span class="c1"># PAS sudo</span>
+</pre></div>
+</div>
+<p>Pour sortir de votre environnement, tapez <code class="docutils literal"><span class="pre">deactivate</span></code></p>
+<p>Une documentation plus complète de cet outil <a class="reference external" href="http://docs.python-guide.org/en/latest/dev/virtualenvs/">est disponible ici</a>.</p>
+</div>
+<div class="section" id="installation-des-outils-front-end">
+<h2>Installation des outils front-end<a class="headerlink" href="#installation-des-outils-front-end" title="Permalink to this headline">¶</a></h2>
+<p>Il vous faut installer les outils du front-end. Pour cela, rendez-vous sur <a class="reference external" href="frontend-install.html">la documentation dédiée</a>.</p>
+</div>
+<div class="section" id="lancer-zds">
+<h2>Lancer ZdS<a class="headerlink" href="#lancer-zds" title="Permalink to this headline">¶</a></h2>
+<p>Une fois dans votre environnement python (<code class="docutils literal"><span class="pre">source</span> <span class="pre">../bin/activate</span></code> si vous utilisez virtualenv, très fortement conseillé), lancez l’installation complète (commandes à taper sans être sudo dans le répertoire du clone de votre fork, l’environnement Python devant être activé) :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>make install-back <span class="c1"># Dépendances Python</span>
+make migrate <span class="c1"># Cf. &quot;migrate&quot; de Django</span>
+make run-back <span class="c1"># Démarre l&#39;instance de ZdS</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="aller-plus-loin">
+<h2>Aller plus loin<a class="headerlink" href="#aller-plus-loin" title="Permalink to this headline">¶</a></h2>
+<p>Pour faire fonctionner ZdS dans son ensemble (ceci n’est pas obligatoire) vous pouvez installer les outils LateX,
+Pandoc et les polices Microsoft.
+Ce qui revient à lancer les commmandes suivantes :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>apt-get install --reinstall ttf-mscorefonts-installer
+apt-get install texlive texlive-xetex texlive-lang-french texlive-latex-extra
+apt-get install haskell-platform
+cabal update
+cabal install pandoc
+</pre></div>
+</div>
+<p>Vous pouvez également <a class="reference external" href="../utils/git-pre-hook.html">indiquer à Git de ne pas effectuer de commit s’il y a des erreurs de formatage dans le code</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="backend-os-x-install.html" class="btn btn-neutral float-right" title="Installation du backend sous macOS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../install.html" class="btn btn-neutral" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, zestedesavoir.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
